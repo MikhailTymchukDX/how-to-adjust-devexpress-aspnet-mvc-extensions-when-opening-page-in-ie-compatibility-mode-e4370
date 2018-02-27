@@ -1,0 +1,26 @@
+@inherits System.Web.Mvc.WebViewPage
+@{
+    ViewBag.Title = "Home Page";
+}
+@Html.DevExpress().Menu(settings => {
+    settings.Name = "dxMenu";
+    settings.Items.Add(item => {
+        item.Text = "Item 1";
+    });
+    settings.Items.Add(item => {
+        item.Text = "Item 2";
+    });
+    settings.Items.Add(item => {
+        item.Text = "Item 3";
+        item.Items.Add(subItem => {
+            subItem.Text = "Sub Item 3.1";
+
+        });
+        item.Items.Add(subItem => {
+            subItem.Text = "Sub Item 3.2";
+        });
+    });
+    settings.Items.Add(item => {
+        item.Text = "Item 4";
+    });
+}).GetHtml()
